@@ -15,14 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-
-         val btnMainSubmit = findViewById<Button>(R.id.btnMainSubmit)
+        val btnMainSubmit = findViewById<Button>(R.id.btnMainSubmit)
         btnMainSubmit?.setOnClickListener{
            Dialog(this).apply {
              setContentView(R.layout.layout_dialog)
              show()
-
-             val etEnter_Name = this.findViewById<EditText>(R.id.etEnter_Name)
+               val etEnter_Name = this.findViewById<EditText>(R.id.etEnter_Name)
              val btnSubmit: Button = this.findViewById(R.id.btnSubmit)
              val btnCancel: Button = this.findViewById(R.id.btnCancel)
                getWindow()?.setLayout( MATCH_PARENT, MATCH_PARENT)
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
                  if (etEnter_Name?.text?.toString().isNullOrEmpty()) {
                      etEnter_Name?.error = resources.getString(R.string.enter_name)
                  } else {
-
                      binding?.etEnter?.setText(etEnter_Name?.text?.toString())
                      this.dismiss()
                  }
